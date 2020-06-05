@@ -1,0 +1,12 @@
+html,
+body {
+  margin: 0;
+}
+
+* {
+  font-family: sans-serif;
+}
+
+.container {
+  padding: 0px 30px;
+}
