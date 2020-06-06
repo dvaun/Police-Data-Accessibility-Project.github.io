@@ -4,8 +4,6 @@ This repository houses all of the code and content for the Police Data Accessibi
 
 1. [Project Overview](#ProjectOverview)
 2. [Info for Developers](#InfoforDevelopers)
-   2.1. [Overview](#Overview)
-   2.2. [Setup](#Setup)
 3. [Info for Content Managers](#InfoforContentManagers)
 
 ## Project Overview
