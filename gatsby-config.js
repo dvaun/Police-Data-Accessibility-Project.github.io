@@ -6,7 +6,7 @@
 
 module.exports = {
   /* Your site config here */
-  pathPrefix: "/gatsby-md-poc",
+  pathPrefix: "/Police-Data-Accessibility-Project.github.io",
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
