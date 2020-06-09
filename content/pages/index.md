@@ -5,6 +5,6 @@ order: 10
 type: "page"
 ---
 
-## This is the home page
+## Hello
 
 Introductory project info will go here
