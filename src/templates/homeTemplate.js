@@ -1,17 +1,16 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import homeStyles from "../css/home.module.css"
 import BackgroundImage from "gatsby-background-image"
 
 export default function Template(props) {
   const {
-    pageContext: { pages, blogposts, events, newsItems },
+    pageContext: { pages },
   } = props
   const { markdownRemark } = props.data
   const { frontmatter, html } = markdownRemark
   const { hero } = frontmatter
-  console.log(hero)
   return (
     <Layout pages={pages}>
       <BackgroundImage

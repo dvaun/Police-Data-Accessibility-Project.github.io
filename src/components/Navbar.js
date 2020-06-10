@@ -11,12 +11,11 @@ export default function Navbar({ pages }) {
           .filter(pageToFilter => pageToFilter.path !== "/")
           .map(page => {
             return (
-              <li className={navStyles.nav__item}>
+              <li key={page.path} className={navStyles.nav__item}>
                 <Link
                   activeClassName={navStyles.nav__link__active}
                   partiallyActive={page.path !== "/" ? true : false}
                   className={navStyles.nav__link}
-                  key={page.path}
                   to={page.path}
                 >
                   {page.title}
