@@ -13,7 +13,7 @@ export default function Template(props) {
       <div className="blog-post">
         <h1>{frontmatter.title}</h1>
         <h2>{frontmatter.date}</h2>
-        <div
+        <section
           className="blog-post-content"
           dangerouslySetInnerHTML={{ __html: html }}
         />

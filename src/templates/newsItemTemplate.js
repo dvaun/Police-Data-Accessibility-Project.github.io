@@ -14,8 +14,8 @@ export default function Template(props) {
       <div className="event">
         <h1>{frontmatter.title}</h1>
         <h2>{frontmatter.date}</h2>
-        <div
-          className="event-content"
+        <section
+          className="news-content"
           dangerouslySetInnerHTML={{ __html: html }}
         />
         {frontmatter.slug.includes("/news") && (

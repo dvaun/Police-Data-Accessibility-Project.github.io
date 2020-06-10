@@ -5,20 +5,30 @@ import navStyles from "../css/nav.module.css"
 
 export default function Navbar({ pages }) {
   return (
-    <nav className={navStyles.navbar}>
-      {pages.map(page => {
-        return (
-          <Link
-            activeClassName={navStyles.nav__item__active}
-            partiallyActive={page.path !== "/" ? true : false}
-            className={navStyles.nav__item}
-            key={page.path}
-            to={page.path}
-          >
-            {page.title}
-          </Link>
-        )
-      })}
+    <nav className={navStyles.nav}>
+      <ul className={navStyles.nav__menu}>
+        {pages
+          .filter(pageToFilter => pageToFilter.path !== "/")
+          .map(page => {
+            return (
+              <li className={navStyles.nav__item}>
+                <Link
+                  activeClassName={navStyles.nav__link__active}
+                  partiallyActive={page.path !== "/" ? true : false}
+                  className={navStyles.nav__link}
+                  key={page.path}
+                  to={page.path}
+                >
+                  {page.title}
+                </Link>
+              </li>
+            )
+          })}
+      </ul>
     </nav>
   )
+}
+
+Navbar.defaultProps = {
+  pages: [],
 }

@@ -11,7 +11,7 @@ export default function Template(props) {
   return (
     <Layout pages={pages}>
       <h1>{frontmatter.title}</h1>
-      <div
+      <section
         className="page__content"
         dangerouslySetInnerHTML={{ __html: html }}
       />

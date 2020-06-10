@@ -1,12 +1,22 @@
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
   align-items: center;
+  height: 9rem;
+  padding: 0 3rem;
+  box-sizing: border-box;
 }
 
 .header__logo {
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1.6rem;
+  height: 6rem;
+  width: 6rem;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
 }

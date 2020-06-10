@@ -1,14 +1,19 @@
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
-  const pageTemplate = require.resolve(`./src/templates/pageTemplate.js`)
-  const eventTemplate = require.resolve(`./src/templates/eventTemplate.js`)
-  const newsItemTemplate = require.resolve(
-    `./src/templates/newsItemTemplate.js`
-  )
-  const blogpostTemplate = require.resolve(
-    `./src/templates/blogpostTemplate.js`
-  )
+  const page = require.resolve(`./src/templates/pageTemplate.js`)
+  const event = require.resolve(`./src/templates/eventTemplate.js`)
+  const newsItem = require.resolve(`./src/templates/newsItemTemplate.js`)
+  const blogpost = require.resolve(`./src/templates/blogpostTemplate.js`)
+  const home = require.resolve(`./src/templates/homeTemplate.js`)
+
+  const templates = {
+    page,
+    event,
+    home,
+    newsItem,
+    blogpost,
+  }
 
   // get pages and blog posts
   const result = await graphql(`
@@ -23,6 +28,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             frontmatter {
               slug
               title
+              template
             }
           }
         }
@@ -37,6 +43,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             frontmatter {
               slug
               title
+              template
             }
           }
         }
@@ -51,6 +58,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             frontmatter {
               slug
               title
+              template
             }
           }
         }
@@ -65,6 +73,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             frontmatter {
               slug
               title
+              template
             }
           }
         }
@@ -100,9 +109,10 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   // build pages
   result.data.pages.edges.forEach(({ node }) => {
+    const { slug, template } = node.frontmatter
     createPage({
       path: node.frontmatter.slug,
-      component: pageTemplate,
+      component: templates[template],
       context: {
         slug: node.frontmatter.slug,
         pages,
@@ -117,7 +127,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   result.data.blogposts.edges.forEach(({ node }) => {
     createPage({
       path: node.frontmatter.slug,
-      component: blogpostTemplate,
+      component: blogpost,
       context: {
         slug: node.frontmatter.slug,
         pages,
@@ -130,7 +140,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   result.data.events.edges.forEach(({ node }) => {
     createPage({
       path: node.frontmatter.slug,
-      component: eventTemplate,
+      component: event,
       context: {
         slug: node.frontmatter.slug,
         pages,
@@ -143,7 +153,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   result.data.newsItems.edges.forEach(({ node }) => {
     createPage({
       path: node.frontmatter.slug,
-      component: newsItemTemplate,
+      component: newsItem,
       context: {
         slug: node.frontmatter.slug,
         pages,

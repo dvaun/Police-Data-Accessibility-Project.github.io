@@ -2,9 +2,9 @@
 
 This repository houses all of the code and content for the Police Data Accessibility Project organization website. The site is powered by [Gatsby](https://www.gatsbyjs.org/) and content is written in [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
-1. [Project Overview](#ProjectOverview)
-2. [Info for Developers](#InfoforDevelopers)
-3. [Info for Content Managers](#InfoforContentManagers)
+1. [Project Overview](#project-overview)
+2. [Info for Developers](#info-for-developers)
+3. [Info for Content Managers](#info-for-content-managers)
 
 ## Project Overview
 
@@ -50,6 +50,12 @@ You can see a demo static site [here](https://milespratt.github.io/Police-Data-A
 
 The development preview can be accessed at [localhost:8000](http://localhost:8000)
 The GraphQL playground can be accessed at [localhost:8000/\_\_\_playground](http://localhost:8000/___playground)
+
+### Testing
+
+Testing is configured according to Gatsby's [Unit Testing](https://www.gatsbyjs.org/docs/unit-testing/) docs.
+
+You can run tests via the `npm test` command.
 
 ## Info for Content Managers
 

@@ -5,7 +5,11 @@
  */
 
 module.exports = {
-  /* Your site config here */
+  siteMetadata: {
+    title: `PDAP`,
+    siteUrl: `https://milespratt.github.io/Police-Data-Accessibility-Project.github.io/`,
+    description: `Police Data Accessibility Project Organization Website`,
+  },
   pathPrefix: "/Police-Data-Accessibility-Project.github.io",
   plugins: [
     {
@@ -15,7 +19,39 @@ module.exports = {
         path: `${__dirname}/content`,
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: "gatsby-plugin-html-attributes",
+      options: {
+        lang: "en",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        google: {
+          families: ["Montserrat", "Playfair Display"],
+        },
+      },
+    },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 2048,
+            },
+          },
+        ],
+      },
+    },
     `gatsby-plugin-playground`,
+    `gatsby-plugin-react-helmet`,
   ],
 }

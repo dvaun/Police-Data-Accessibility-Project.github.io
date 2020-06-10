@@ -1,12 +1,12 @@
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+html {
+  font-size: 10px;
+}
+
 html,
 body {
   margin: 0;
-}
-
-* {
-  font-family: sans-serif;
-}
-
-.container {
-  padding: 0px 30px;
 }
