@@ -5,18 +5,28 @@
   height: 9rem;
   padding: 0 3rem;
   box-sizing: border-box;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: white;
 }
 
 .header__logo {
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 1.6rem;
-  height: 6rem;
-  width: 6rem;
-  background-color: black;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
+  /* width: 225px; */
+}
+
+.header__logo__image {
+  width: 225px;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+  .header {
+    height: 5rem;
+  }
+  .header__logo__image {
+    width: 15rem;
+  }
 }

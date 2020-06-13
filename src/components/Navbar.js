@@ -8,7 +8,7 @@ export default function Navbar({ pages }) {
     <nav className={navStyles.nav}>
       <ul className={navStyles.nav__menu}>
         {pages
-          .filter(pageToFilter => pageToFilter.path !== "/")
+          // .filter(pageToFilter => pageToFilter.path !== "/")
           .map(page => {
             return (
               <li key={page.path} className={navStyles.nav__item}>

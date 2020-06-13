@@ -22,16 +22,31 @@
 
 .nav__link {
   color: #515052;
+  color: black;
   text-decoration: none;
   font-weight: 500;
   font-size: 1.6rem;
+  position: relative;
 }
 
-.nav__link:hover,
-.nav__link__active {
-  border-bottom: 2px solid #d5a23c;
+.nav__link:hover::after,
+.nav__link__active::after {
+  /* border-bottom: 2px solid #d5a23c; */
+  content: "*";
+  position: absolute;
+  color: #d5a23c;
+  left: 41%;
+  font-size: 2.5rem;
+  bottom: -2.75rem;
 }
 
 .nav__link__active {
   font-weight: bold;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+  .nav {
+    opacity: 0;
+  }
 }
